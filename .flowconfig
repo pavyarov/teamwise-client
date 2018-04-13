@@ -1,0 +1,16 @@
+[ignore]
+.*/node_modules/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+esproposal.decorators=ignore
+module.name_mapper.extension='css' -> '<PROJECT_ROOT>/flow/stub/css-module.js'
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/flow/stub/css-module.js'
+module.name_mapper.extension='sass' -> '<PROJECT_ROOT>/flow/stub/css-module.js'
+
+[strict]
