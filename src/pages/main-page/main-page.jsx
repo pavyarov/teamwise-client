@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 import { withRouter } from 'react-router-dom';
 import { plainBlock } from '@redneckz/react-bem-helper';
@@ -5,14 +6,18 @@ import { AppBar, Toolbar, Typography, Button } from 'material-ui';
 import styles from './main-page.sass';
 import Logo from './under-construction.png';
 
-export const MainPage = plainBlock('main-page', { styles })(({ className }) => (
+type Props = {
+    className: string,
+};
+
+export const MainPage = plainBlock('main-page', { styles })(({ className }: Props) => (
     <div className={className}>
         <AppBar position="static">
             <Toolbar>
                 <Title variant="title" color="inherit">
                     Teamwise
                 </Title>
-                <LoginButton color="inherit">Login</LoginButton>
+                <LoginButton color="inherit">Sign-In</LoginButton>
             </Toolbar>
         </AppBar>
         <UnderConstraction />
@@ -27,7 +32,7 @@ const LoginButton = MainPage.element('login-button')(
         </Button>
     )),
 );
-const UnderConstraction = MainPage.element('under-construction')(({ className }) => (
+const UnderConstraction = MainPage.element('under-construction')(({ className }: Props) => (
     <div className={className}>
         <img src={Logo} alt="logo" />
     </div>
